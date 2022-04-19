@@ -1,25 +1,23 @@
 import React from "react";
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Categories from "../components/Categories";
+import { useAppSelector } from "../hooks/appHooks";
+import { GalleryType } from "../types/galleryTypes";
+import CardItem from "../components/Card";
 
 const Gallery = () => {
+  const { gallery } = useAppSelector((state) => state.gallery);
+
   return (
     <>
       <Container>
         <Categories />
         <Row lg={3} style={{ rowGap: 30 }}>
-          {Array(6)
-            .fill(10)
-            .map((item) => (
-              <Col>
-                <Card style={{ width: "26rem" }}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
-                  <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+          {gallery.map((item: GalleryType) => (
+            <Col key={item.id}>
+              <CardItem {...item} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </>

@@ -1,6 +1,10 @@
+*a {
+  color: #ffffff;
+}
+
 .App {
   background-color: #000000;
-  height: 100vh;
+  height: 100%;
 }
 
 .header {
@@ -28,6 +32,58 @@
 .active {
   background-color: blue !important;
 }
+
+.cardItem {
+  width: 100%;
+  position: relative;
+}
+
+.cardHover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.72);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.details a,
+.container a {
+  color: #ffffff;
+  transition: ease-in-out 0.8ms;
+}
+
+.detailsVisible {
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  transition: ease-in-out 0.8ms;
+}
+
+/*.cardHover:after {*/
+/*  background-color: rgba(0, 0, 0, 0.58);*/
+/*  position: absolute;*/
+/*  content: "Подробнее";*/
+/*  color: white;*/
+/*  text-align: center;*/
+/*  vertical-align: center;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*  bottom: 0;*/
+/*}*/
 
 .dropdown-toggle:empty::after {
   display: none;
