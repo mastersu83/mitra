@@ -68,7 +68,7 @@ const CardItem: FC<GalleryType> = ({
               onClick={handlerDetails}
               className={`details ${detailsVisible ? "detailsVisible" : ""}`}
             >
-              <Link to="/details">
+              <Link to="/mitra/details">
                 <span>Подробнее</span>
               </Link>
             </div>

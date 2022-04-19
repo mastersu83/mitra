@@ -12,7 +12,7 @@ const About = () => {
           fontSize: 30,
         }}
       >
-        <Link to="/">
+        <Link to="/mitra">
           <span>Назад</span>
         </Link>
       </div>

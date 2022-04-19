@@ -18,10 +18,10 @@ const Header = () => {
                 </Dropdown.Item>
                 <Dropdown.Item disabled>name: master</Dropdown.Item>
                 <Dropdown.Item disabled>Email: master@mail.ru</Dropdown.Item>
-                <Dropdown.Item as={Link} to="/">
+                <Dropdown.Item as={Link} to="/mitra/">
                   Галерея
                 </Dropdown.Item>
-                <Dropdown.Item as={Link} to="/about">
+                <Dropdown.Item as={Link} to="/mitra/about">
                   Обо мне
                 </Dropdown.Item>
               </Dropdown.Menu>

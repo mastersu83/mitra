@@ -23,9 +23,9 @@ function App() {
       <Header />
       <Dropdown.Divider />
       <Routes>
-        <Route path="/" element={<Gallery />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/details" element={<Details />} />
+        <Route path="/mitra" element={<Gallery />} />
+        <Route path="/mitra/about" element={<About />} />
+        <Route path="/mitra/details" element={<Details />} />
       </Routes>
     </div>
   );
