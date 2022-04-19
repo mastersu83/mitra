@@ -19,7 +19,6 @@ export function* watchPhotosSaga() {
   );
 }
 export function* getDetailsWorkerSaga(item: GalleryType) {
-  console.log(item);
   yield put(galleryActions.addDetailsAction(item));
 }
 export function* watchDetailsSaga() {
