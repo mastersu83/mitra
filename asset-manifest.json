@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/mitra/static/css/main.b59ad061.css",
-    "main.js": "/mitra/static/js/main.31ca6b5a.js",
+    "main.js": "/mitra/static/js/main.66ce097c.js",
     "static/media/avatar-svgrepo-com.svg": "/mitra/static/media/avatar-svgrepo-com.0be9cab97da9db857abd6d00805bac77.svg",
     "index.html": "/mitra/index.html",
     "static/media/burgerMenu.svg": "/mitra/static/media/burgerMenu.9d1313f01761a8d29926.svg",
     "main.b59ad061.css.map": "/mitra/static/css/main.b59ad061.css.map",
-    "main.31ca6b5a.js.map": "/mitra/static/js/main.31ca6b5a.js.map"
+    "main.66ce097c.js.map": "/mitra/static/js/main.66ce097c.js.map"
   },
   "entrypoints": [
     "static/css/main.b59ad061.css",
-    "static/js/main.31ca6b5a.js"
+    "static/js/main.66ce097c.js"
   ]
 }
