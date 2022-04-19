@@ -1,6 +1,6 @@
 import axios from "axios";
 import { call, put, takeEvery } from "redux-saga/effects";
-import { addDetailsAction, getPhotoAction } from "../actions/dalleryAction";
+import { addDetailsAction, getPhotoAction } from "../actions/galleryAction";
 import { GalleryType } from "../../types/galleryTypes";
 
 const getTasks = async (id: number) => {

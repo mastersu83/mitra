@@ -19,5 +19,11 @@ export default store;
 
 sagaMiddleware.run(rootSaga);
 
+type PropertiesType<T> = T extends { [key: string]: infer U } ? U : never;
+
+export type InferActionsType<
+  T extends { [key: string]: (...arg: any[]) => any }
+> = ReturnType<PropertiesType<T>>;
+
 export type RootReducerType = ReturnType<typeof store.getState>;
 export type AppDispatchType = typeof store.dispatch;

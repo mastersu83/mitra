@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import CategoriesItem from "./CategoriesItem";
 import { useAppDispatch, useAppSelector } from "../hooks/appHooks";
-import { fetchPhotoAction } from "../redux/actions/dalleryAction";
+import { galleryActions } from "../redux/actions/galleryAction";
 
 const categoriesItem = [
   { id: 1, category: 1 },
@@ -18,7 +18,7 @@ const Categories = () => {
 
   const handleCategories = (categories: number) => {
     setActiveCategory(categories);
-    dispatch(fetchPhotoAction(categories));
+    dispatch(galleryActions.fetchPhotoAction(categories));
   };
 
   return (

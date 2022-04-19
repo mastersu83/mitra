@@ -7,7 +7,7 @@ import Header from "./components/Header";
 import About from "./pages/About";
 import { Route, Routes } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "./hooks/appHooks";
-import { fetchPhotoAction } from "./redux/actions/dalleryAction";
+import { galleryActions } from "./redux/actions/galleryAction";
 import Details from "./pages/Details";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   const { categories } = useAppSelector((state) => state.gallery);
 
   useEffect(() => {
-    dispatch(fetchPhotoAction(categories));
+    dispatch(galleryActions.fetchPhotoAction(categories));
   }, []);
 
   return (

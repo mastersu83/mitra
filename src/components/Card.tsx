@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import { GalleryType } from "../types/galleryTypes";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks/appHooks";
-import { addDetailsAction } from "../redux/actions/dalleryAction";
+import { galleryActions } from "../redux/actions/galleryAction";
 import Loader from "./Loader";
 
 const CardItem: FC<GalleryType> = ({
@@ -16,8 +16,6 @@ const CardItem: FC<GalleryType> = ({
   const dispatch = useAppDispatch();
   const [detailsVisible, setDetailsVisible] = useState<boolean>(false);
   const [delay, setDelay] = useState<boolean>(false);
-
-  console.log(delay);
 
   const onMouseEnter = () => {
     setDetailsVisible(true);
@@ -34,7 +32,7 @@ const CardItem: FC<GalleryType> = ({
 
   const handlerDetails = () => {
     dispatch(
-      addDetailsAction({
+      galleryActions.addDetailsAction({
         id,
         url,
         title,

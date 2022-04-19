@@ -1,5 +1,5 @@
 import { GalleryType } from "../../types/galleryTypes";
-import { ActionsType } from "../actions/dalleryAction";
+import { ActionsType } from "../actions/galleryAction";
 
 type InitialStateType = {
   gallery: GalleryType[];
@@ -13,7 +13,10 @@ const initialState: InitialStateType = {
   details: null,
 };
 
-const galleryReducer = (state = initialState, action: ActionsType) => {
+const galleryReducer = (
+  state = initialState,
+  action: ActionsType
+): InitialStateType => {
   switch (action.type) {
     case "GET_PHOTOS":
       return {

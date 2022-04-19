@@ -32,10 +32,17 @@ const Details = () => {
           </div>
 
           <div>
-            <h2 style={{ color: "#ffffff" }}>{details.title}</h2>
+            <h2 style={{ color: "#ffffff" }}>{details && details.title}</h2>
           </div>
           <Card className="cardHover">
-            <Card.Img variant="top" src={details.url} />
+            <Card.Img
+              variant="top"
+              src={
+                details
+                  ? details.url
+                  : "https://sun9-53.userapi.com/impg/6XKSadOO3Ar3dTxRYKRU2xHsqPIqcmDqaNvy_g/IO1i27c6HOg.jpg?size=1280x720&quality=96&sign=ffd766ccada4f21e26cd83f3f53bc5ea&c_uniq_tag=qlI11KjfCJEZ039eLMaOh1S36J5zcpAm6S7vg94RWxk&type=album"
+              }
+            />
           </Card>
         </>
       )}
