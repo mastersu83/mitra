@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Dropdown, Row } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
-import avatar from "../assets/burgerMenu.svg";
+import avatar from "../assets/avatar-svgrepo-com.svg";
 import { Link } from "react-router-dom";
 
 const Header = () => {
@@ -16,8 +16,8 @@ const Header = () => {
                 <Dropdown.Item disabled>
                   <Image src={avatar} />
                 </Dropdown.Item>
-                <Dropdown.Item disabled>name</Dropdown.Item>
-                <Dropdown.Item disabled>Email</Dropdown.Item>
+                <Dropdown.Item disabled>name: master</Dropdown.Item>
+                <Dropdown.Item disabled>Email: master@mail.ru</Dropdown.Item>
                 <Link to="/" className="menuLink">
                   <Dropdown.Item href="/">Галерея</Dropdown.Item>
                 </Link>

@@ -1,10 +1,6 @@
 import axios from "axios";
-import { call, put, takeLeading, takeEvery } from "redux-saga/effects";
-import {
-  addDetailsAction,
-  fetchPhotoAction,
-  getPhotoAction,
-} from "../actions/dalleryAction";
+import { call, put, takeEvery } from "redux-saga/effects";
+import { addDetailsAction, getPhotoAction } from "../actions/dalleryAction";
 import { GalleryType } from "../../types/galleryTypes";
 
 const getTasks = async (id: number) => {
@@ -18,8 +14,8 @@ export function* getPhotosWorkerSaga(id: number) {
   yield put(getPhotoAction(data));
 }
 export function* watchPhotosSaga() {
-  yield takeLeading(fetchPhotoAction, (action) =>
-    getPhotosWorkerSaga(action.id)
+  yield takeEvery("FETCH_PHOTOS", (action: { type: string; payload: number }) =>
+    getPhotosWorkerSaga(action.payload)
   );
 }
 export function* getDetailsWorkerSaga(item: GalleryType) {

@@ -19,6 +19,12 @@ const galleryReducer = (state = initialState, action: any) => {
         ...state,
         gallery: action.payload,
       };
+    case "FETCH_PHOTOS":
+      console.log(action);
+      return {
+        ...state,
+        categories: action.payload,
+      };
     case "ADD_DETAILS":
       return {
         ...state,

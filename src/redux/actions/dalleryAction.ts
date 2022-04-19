@@ -6,7 +6,7 @@ export const getPhotoAction = (payload: GalleryType[]) => ({
 });
 export const fetchPhotoAction = (id: number) => ({
   type: "FETCH_PHOTOS",
-  id,
+  payload: id,
 });
 export const addDetailsAction = (item: GalleryType) => ({
   type: "ADD_DETAILS",

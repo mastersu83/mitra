@@ -1,9 +1,10 @@
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { GalleryType } from "../types/galleryTypes";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks/appHooks";
 import { addDetailsAction } from "../redux/actions/dalleryAction";
+import Loader from "./Loader";
 
 const CardItem: FC<GalleryType> = ({
   id,
@@ -14,6 +15,9 @@ const CardItem: FC<GalleryType> = ({
 }) => {
   const dispatch = useAppDispatch();
   const [detailsVisible, setDetailsVisible] = useState<boolean>(false);
+  const [delay, setDelay] = useState<boolean>(false);
+
+  console.log(delay);
 
   const onMouseEnter = () => {
     setDetailsVisible(true);
@@ -21,6 +25,12 @@ const CardItem: FC<GalleryType> = ({
   const onMouseLeave = () => {
     setDetailsVisible(false);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setDelay(true);
+    }, 500);
+  }, []);
 
   const handlerDetails = () => {
     dispatch(
@@ -33,23 +43,30 @@ const CardItem: FC<GalleryType> = ({
       })
     );
   };
+
   return (
-    <div
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      className="cardItem"
-    >
-      <Card className="cardHover">
-        <Card.Img variant="top" src={url} />
+    <div>
+      {!delay ? (
+        <Loader />
+      ) : (
         <div
-          onClick={handlerDetails}
-          className={`details ${detailsVisible ? "detailsVisible" : ""}`}
+          onMouseEnter={onMouseEnter}
+          onMouseLeave={onMouseLeave}
+          className="cardItem"
         >
-          <Link to="/details">
-            <span>Подробнее</span>
-          </Link>
+          <Card className="cardHover">
+            <Card.Img variant="top" src={url} />
+            <div
+              onClick={handlerDetails}
+              className={`details ${detailsVisible ? "detailsVisible" : ""}`}
+            >
+              <Link to="/details">
+                <span>Подробнее</span>
+              </Link>
+            </div>
+          </Card>
         </div>
-      </Card>
+      )}
     </div>
   );
 };

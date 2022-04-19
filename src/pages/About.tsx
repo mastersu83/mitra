@@ -1,9 +1,21 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
     <Container>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "end",
+          fontSize: 30,
+        }}
+      >
+        <Link to="/">
+          <span>Назад</span>
+        </Link>
+      </div>
       <p className="about">
         Я начинающий React-разработчик. Много самостоятельной практики, интернет
         магазин, todo. Могу самостоятельно сделать небольшое приложение, от
