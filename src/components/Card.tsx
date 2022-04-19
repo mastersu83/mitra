@@ -40,6 +40,16 @@ const CardItem: FC<GalleryType> = ({
         albumId,
       })
     );
+    localStorage.setItem(
+      "detailPhoto",
+      JSON.stringify({
+        id,
+        url,
+        title,
+        thumbnailUrl,
+        albumId,
+      })
+    );
   };
 
   return (
