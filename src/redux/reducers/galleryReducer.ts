@@ -1,4 +1,5 @@
 import { GalleryType } from "../../types/galleryTypes";
+import { ActionsType } from "../actions/dalleryAction";
 
 type InitialStateType = {
   gallery: GalleryType[];
@@ -12,7 +13,7 @@ const initialState: InitialStateType = {
   details: null,
 };
 
-const galleryReducer = (state = initialState, action: any) => {
+const galleryReducer = (state = initialState, action: ActionsType) => {
   switch (action.type) {
     case "GET_PHOTOS":
       return {
@@ -20,7 +21,6 @@ const galleryReducer = (state = initialState, action: any) => {
         gallery: action.payload,
       };
     case "FETCH_PHOTOS":
-      console.log(action);
       return {
         ...state,
         categories: action.payload,
