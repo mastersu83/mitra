@@ -1,5 +1,5 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { AppStoreType } from "../redux/reduxStorу";
+import { AppStoreType } from "../redux/reduxStore";
 import { gallerySlice } from "../redux/reducers/gallerySlice";
 import { bindActionCreators } from "redux";
 
