@@ -1,6 +1,14 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { AppDispatchType, RootReducerType } from "../redux/reduxStore";
+import { AppStoreType } from "../redux/reduxStorу";
+import { gallerySlice } from "../redux/reducers/gallerySlice";
+import { bindActionCreators } from "redux";
 
-export const useAppDispatch = () => useDispatch<AppDispatchType>();
-export const useAppSelector: TypedUseSelectorHook<RootReducerType> =
-  useSelector;
+const AllActions = {
+  ...gallerySlice.actions,
+};
+
+export const useAppDispatch = () => {
+  const dispatch = useDispatch();
+  return bindActionCreators(AllActions, dispatch);
+};
+export const useAppSelector: TypedUseSelectorHook<AppStoreType> = useSelector;

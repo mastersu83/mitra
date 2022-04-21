@@ -3,7 +3,6 @@ import { Card } from "react-bootstrap";
 import { GalleryType } from "../types/galleryTypes";
 import { Link } from "react-router-dom";
 import { useAppDispatch } from "../hooks/appHooks";
-import { galleryActions } from "../redux/actions/galleryAction";
 import Loader from "./Loader";
 
 const CardItem: FC<GalleryType> = ({
@@ -13,7 +12,7 @@ const CardItem: FC<GalleryType> = ({
   thumbnailUrl,
   albumId,
 }) => {
-  const dispatch = useAppDispatch();
+  const { addDetails } = useAppDispatch();
   const [detailsVisible, setDetailsVisible] = useState<boolean>(false);
   const [delay, setDelay] = useState<boolean>(false);
 
@@ -31,15 +30,13 @@ const CardItem: FC<GalleryType> = ({
   }, []);
 
   const handlerDetails = () => {
-    dispatch(
-      galleryActions.addDetailsAction({
-        id,
-        url,
-        title,
-        thumbnailUrl,
-        albumId,
-      })
-    );
+    addDetails({
+      id,
+      url,
+      title,
+      thumbnailUrl,
+      albumId,
+    });
     localStorage.setItem(
       "detailPhoto",
       JSON.stringify({
